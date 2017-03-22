@@ -1,3 +1,92 @@
 <html>
-    hello!!1
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src= "main.js"> </script>
+<style>
+table {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<table id='table'></table>
+<!--<div >
+
+  
+  <button type="button" id="p" onclick="loadDoc()">Change Content</button>
+  
+</div>-->
+
+</body>
 </html>
+
+/*var x;
+function loadDoc() {
+  $.ajax({
+            url: "http://28.164.175.24:9002/getFormData ",
+            type: 'GET',
+            success: function(res) {
+                console.log(res);
+               x = res;
+               alert(x);
+            }
+        });
+}
+*/
+
+
+$(document).ready(function () {
+var json;
+    $.getJSON("http://28.164.175.24:9002/getFormData  ",function (ajson)
+     {      
+            json=ajson;
+            console.log(json);
+        var tr;
+        for (var i = 0; i < json.length; i++) 
+        {
+            tr = $('<tr/>');
+            tr.append("<td>" + json[i].name + "</td>");
+            tr.append("<td>" + json[i].email + "</td>");
+            tr.append("<td>" + json[i].role + "</td>");
+            tr.append("<td>" + json[i].date + "</td>");
+            tr.append("<td>" + json[i].archived + "</td>");
+            tr.append("<td>" + json[i].licensed+ "</td>");
+            $('table').append(tr);
+        }
+    });
+});
+
+
+
+[
+{
+"name":"user name 1",
+"email":"user1_email@website.com",
+"role":"Administrator",
+"date":"2011\/07\/14 09:39:10 -05:00",
+"archived":false,
+"invited":false,
+"licensed":true,
+"locked":false
+},
+{
+"name":"user name 2",
+"email":"user2_email@website.com",
+"role":"Participant",
+"date":"",
+"archived":false,
+"invited":false,
+"licensed":true,
+"locked":false
+},
+{
+"name":"user name 3",
+"email":"user3_email@website.com",
+"role":"Author",
+"date":"2011\/07\/14 09:25:43 -05:00",
+"archived":false,
+"invited":false,
+"licensed":true,
+"locked":false
+}
+]
