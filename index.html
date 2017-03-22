@@ -54,6 +54,24 @@ var json;
             $('table').append(tr);
         }
     });
+        $.getJSON("https://jsonplaceholder.typicode.com/users",function (bjson)
+     {      
+            json=bjson;
+            console.log(json);
+        var tr;
+        for (var i = 0; i < json.length; i++) 
+        {
+            tr = $('<tr/>');
+            tr.append("<td>" + json[i].name + "</td>");
+            
+           
+            $('table').append(tr);
+        }
+    });
+
+
+});
+
 });
 
 
