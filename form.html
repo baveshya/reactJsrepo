@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src= "main.js"> </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>IBM BLUEWORKS</title>
+<style>
+
+table {
+    border: 1px solid white;
+    width:100%;
+    height:50px;
+     page-break-inside:auto
+}
+ td {
+    padding: 15px;
+    text-align: left;
+
+    color: white;
+}
+tr
+{
+	 page-break-inside:avoid; page-break-after:auto 
+}
+th{
+	background-color: rgba(72, 248, 250, 0.55);
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+body{
+	text-align: center;
+		background-repeat: no-repeat;
+        padding: 9%;
+        background-image: url("IBM.jpg");
+        background-size:cover;
+         font-family: sans-serif;
+     }
+  h2{
+  	color:white;
+  }
+  h3
+  {
+  	color:white;
+  }
+</style>
+</head>
+<body>
+<!--<div class="header" style="margin-top: -81px;
+    font-size: xx-large;
+    color: #a8f391;
+    text-shadow: 2px 2px whitesmoke;
+">
+        IBM BLUEWORKS
+        <img src="logo.jpg" style= "width: 93px;
+    height: 39px;
+    margin-left: -417px;
+    /* margin-top: -34px; */
+    margin-bottom: -3px;">
+    </div>-->
+<table id='table'>
+<tr>
+<th>ID</th>
+<th>TITLE</th>
+<th>USERID</th>
+<!--<th>License Status</th>
+<th>User Name</th>
+<th>Invitation Status</th>
+<th>Locked Status</th>
+<th>Email</th>-->
+
+</table>
+ <button id="btnExport" onclick="fnExcelReport()"> EXPORT </button> 
+ <iframe id="txtArea1" style="display:none"></iframe>    
+<div class="footer">
+        <h3>RBS PLC Copyright 2017</h3>
+    </div>
+
+</body>
+</html>
